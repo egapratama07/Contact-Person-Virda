@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Virda Ananda Putri</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,240,234,.95),
+    transparent 34%),
+
+    radial-gradient(circle at bottom right,
+    rgba(220,195,255,.55),
+    transparent 34%),
+
+    linear-gradient(
+    135deg,
+    #ffe9e3,
+    #f7dce7,
+    #f1e0ff,
+    #ffe4eb
+    );
+
+    background-size:400% 400%;
+    animation:bgMove 16s ease infinite;
+}
+
+/* ANIMATION */
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* SPARKLE */
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px);
+
+    background-size:120px 120px;
+
+    opacity:.25;
+    pointer-events:none;
+}
+
+/* FLOWER MOTIF */
+
+.flower{
+    position:absolute;
+    opacity:.10;
+    pointer-events:none;
+    z-index:0;
+    filter:blur(.2px);
+}
+
+.flower1{
+    top:-40px;
+    left:-40px;
+    width:190px;
+    transform:rotate(-10deg);
+}
+
+.flower2{
+    top:-30px;
+    right:-40px;
+    width:170px;
+    transform:rotate(18deg);
+}
+
+.flower3{
+    bottom:-50px;
+    left:-30px;
+    width:180px;
+    transform:rotate(12deg);
+}
+
+.flower4{
+    bottom:-50px;
+    right:-30px;
+    width:190px;
+    transform:rotate(-15deg);
+}
+
+/* GLOW */
+
+.glow1,
+.glow2{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    z-index:0;
+}
+
+.glow1{
+    width:220px;
+    height:220px;
+    background:#ffc9d7;
+    top:-70px;
+    left:-70px;
+    opacity:.4;
+}
+
+.glow2{
+    width:240px;
+    height:240px;
+    background:#d8c0ff;
+    bottom:-90px;
+    right:-90px;
+    opacity:.35;
+}
+
+/* WRAPPER */
+
+.wrapper{
+    width:100%;
+    max-width:340px;
+    padding:18px 16px;
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+/* PROFILE */
+
+.profile-frame{
+    width:118px;
+    height:118px;
+
+    margin:auto;
+    padding:4px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff3d9,
+    #ffbfd7,
+    #d9c1ff
+    );
+
+    box-shadow:
+    0 0 18px rgba(255,255,255,.7),
+    0 0 35px rgba(255,183,213,.35);
+
+    animation:pulse 3s infinite;
+}
+
+.profile-frame img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+
+    object-fit:cover;
+    object-position:center top;
+
+    border:3px solid rgba(255,255,255,.8);
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.015);
+    }
+}
+
+/* NAME */
+
+h1{
+    margin-top:12px;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    line-height:1.08;
+    font-weight:700;
+
+    color:#5d1a54;
+}
+
+/* DIVIDER */
+
+.divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    margin:12px 0 18px;
+}
+
+.divider span{
+    width:52px;
+    height:3px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #f5b59f,
+    #cba8ff
+    );
+}
+
+.divider i{
+    font-size:15px;
+    color:#e68bbd;
+}
+
+/* CARD */
+
+.card{
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:12px 14px;
+    margin-bottom:12px;
+
+    border-radius:22px;
+
+    text-decoration:none;
+    color:#65195b;
+
+    background:rgba(255,255,255,.28);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 8px 20px rgba(194,143,255,.12);
+
+    transition:.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-2px);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+    );
+
+    transition:.7s;
+}
+
+.card:hover::before{
+    left:120%;
+}
+
+/* LEFT */
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* ICON */
+
+.icon{
+    width:44px;
+    height:44px;
+
+    border-radius:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    box-shadow:
+    0 5px 12px rgba(0,0,0,.08);
+}
+
+.icon img{
+    width:22px;
+    height:22px;
+}
+
+/* ICON COLORS */
+
+.whatsapp .icon{
+    background:
+    linear-gradient(
+    135deg,
+    #9df0b5,
+    #25d366
+    );
+}
+
+.email .icon{
+    background:
+    linear-gradient(
+    135deg,
+    #ff9fc8,
+    #de5f9d
+    );
+}
+
+/* TEXT */
+
+.text{
+    text-align:left;
+}
+
+.text b{
+    display:block;
+    font-size:15px;
+    font-weight:600;
+}
+
+.text span{
+    font-size:10px;
+    opacity:.78;
+}
+
+/* ARROW */
+
+.arrow{
+    font-size:24px;
+    color:#6f1d66;
+    opacity:.5;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:14px;
+    color:#4f1148;
+}
+
+.heart{
+    font-size:24px;
+    color:white;
+
+    text-shadow:
+    0 0 12px rgba(255,255,255,.8);
+
+    margin-bottom:4px;
+}
+
+footer p{
+    font-family:'Cormorant Garamond',serif;
+}
+
+footer p:first-of-type{
+    font-size:18px;
+    font-weight:600;
+}
+
+footer p:last-of-type{
+    margin-top:2px;
+    font-size:12px;
+}
+
+/* RIPPLE */
+
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    animation:ripple .6s linear;
+    background:rgba(255,255,255,.5);
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOWER MOTIF -->
+
+<img class="flower flower1"
+src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+
+<img class="flower flower2"
+src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+
+<img class="flower flower3"
+src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+
+<img class="flower flower4"
+src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+
+<!-- GLOW -->
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<div class="wrapper">
+
+    <!-- PROFILE -->
+
+    <div class="profile-frame">
+        <img src="profile.jpg">
+    </div>
+
+    <h1>Virda Ananda Putri</h1>
+
+    <div class="divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+    </div>
+
+    <!-- WHATSAPP -->
+
+    <a class="card whatsapp"
+    href="https://wa.me/6281381416817"
+    target="_blank">
+
+        <div class="left">
+
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/whatsapp.png">
+            </div>
+
+            <div class="text">
+                <b>WhatsApp</b>
+                <span>Chat langsung via WhatsApp</span>
+            </div>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- EMAIL -->
+
+    <a class="card email"
+    href="mailto:virdaananda75@gmail.com">
+
+        <div class="left">
+
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/new-post.png">
+            </div>
+
+            <div class="text">
+                <b>Email</b>
+                <span>Virda Ananda Putri</span>
+            </div>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="heart">♡</div>
+
+        <p>Terima kasih telah berkunjung!</p>
+
+        <p>© 2026 Virda Ananda Putri</p>
+
+    </footer>
+
+</div>
+
+<script>
+
+document.querySelectorAll('.card').forEach(btn=>{
+
+btn.addEventListener('click',function(e){
+
+const circle=document.createElement('span');
+
+const d=Math.max(
+this.clientWidth,
+this.clientHeight
+);
+
+const r=d/2;
+
+circle.style.width=
+circle.style.height=d+'px';
+
+circle.style.left=
+(e.offsetX-r)+'px';
+
+circle.style.top=
+(e.offsetY-r)+'px';
+
+circle.classList.add('ripple');
+
+const ripple=this.querySelector('.ripple');
+
+if(ripple) ripple.remove();
+
+this.appendChild(circle);
+
+})
+
+})
+
+</script>
+
+</body>
+</html>
