@@ -21,26 +21,99 @@ body{
     overflow-x:hidden;
     color:white;
 
-    /* Elegant aesthetic background */
     background:
-    radial-gradient(circle at top left,
-    rgba(255,182,193,.18),
-    transparent 30%),
-
-    radial-gradient(circle at bottom right,
-    rgba(192,132,252,.15),
-    transparent 30%),
-
     linear-gradient(
         135deg,
         #0b1020,
-        #141b34,
-        #1d1635,
+        #161d36,
+        #24173b,
         #0b1020
     );
 
     background-size:400% 400%;
     animation:bgMove 15s ease infinite;
+
+    position:relative;
+}
+
+/* Floral Background */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* Flower Pattern */
+
+body::before{
+
+    background-image:
+
+    radial-gradient(circle at center,
+    rgba(255,255,255,.08) 0 8px,
+    transparent 9px),
+
+    radial-gradient(circle at top,
+    rgba(249,168,212,.08) 0 18px,
+    transparent 19px),
+
+    radial-gradient(circle at bottom,
+    rgba(192,132,252,.08) 0 18px,
+    transparent 19px),
+
+    radial-gradient(circle at left,
+    rgba(255,182,193,.08) 0 18px,
+    transparent 19px),
+
+    radial-gradient(circle at right,
+    rgba(216,180,254,.08) 0 18px,
+    transparent 19px),
+
+    radial-gradient(circle,
+    rgba(255,255,255,.04) 0 5px,
+    transparent 6px);
+
+    background-size:
+    240px 240px,
+    240px 240px,
+    240px 240px,
+    240px 240px,
+    240px 240px,
+    120px 120px;
+
+    background-position:
+    40px 40px,
+    40px 10px,
+    40px 70px,
+    10px 40px,
+    70px 40px,
+    100px 100px;
+
+    opacity:.4;
+}
+
+/* Soft Glow */
+
+body::after{
+
+    background:
+    radial-gradient(circle at 20% 20%,
+    rgba(249,168,212,.12),
+    transparent 25%),
+
+    radial-gradient(circle at 80% 80%,
+    rgba(192,132,252,.10),
+    transparent 25%),
+
+    radial-gradient(circle at 50% 50%,
+    rgba(255,255,255,.04),
+    transparent 35%);
+
+    filter:blur(20px);
 }
 
 @keyframes bgMove{
@@ -57,7 +130,7 @@ body{
     position:relative;
 }
 
-/* Soft glow background */
+/* Floating glow */
 
 .wrapper::before,
 .wrapper::after{
@@ -67,7 +140,7 @@ body{
     height:260px;
     border-radius:50%;
     filter:blur(90px);
-    opacity:.22;
+    opacity:.20;
     z-index:-1;
 }
 
