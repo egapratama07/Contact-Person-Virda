@@ -29,26 +29,26 @@ body{
 
     background:
     radial-gradient(circle at top left,
-    rgba(255,240,230,.95),
-    transparent 35%),
+    rgba(255,241,234,.95),
+    transparent 34%),
 
     radial-gradient(circle at bottom right,
-    rgba(214,184,255,.65),
-    transparent 35%),
+    rgba(219,191,255,.65),
+    transparent 34%),
 
     linear-gradient(
     135deg,
-    #ffe7e1,
+    #ffe8e2,
     #f8dce8,
-    #efd9ff,
-    #ffdfe8
+    #f0ddff,
+    #ffe1e8
     );
 
     background-size:400% 400%;
     animation:bgMove 16s ease infinite;
 }
 
-/* BACKGROUND MOTION */
+/* BACKGROUND ANIMATION */
 
 @keyframes bgMove{
     0%{background-position:0% 50%}
@@ -64,11 +64,11 @@ body::before{
     inset:0;
 
     background-image:
-    radial-gradient(rgba(255,255,255,.9) 1px, transparent 1px);
+    radial-gradient(rgba(255,255,255,.85) 1px, transparent 1px);
 
-    background-size:120px 120px;
+    background-size:110px 110px;
 
-    opacity:.35;
+    opacity:.32;
     pointer-events:none;
 }
 
@@ -78,83 +78,83 @@ body::before{
 .glow2{
     position:absolute;
     border-radius:50%;
-    filter:blur(90px);
+    filter:blur(85px);
     z-index:0;
 }
 
 .glow1{
-    width:260px;
-    height:260px;
-    background:#ffc7d7;
-    top:-80px;
-    left:-80px;
-    opacity:.5;
+    width:230px;
+    height:230px;
+    background:#ffc8d7;
+    top:-70px;
+    left:-70px;
+    opacity:.45;
 }
 
 .glow2{
-    width:300px;
-    height:300px;
-    background:#d3b5ff;
-    bottom:-100px;
-    right:-100px;
-    opacity:.4;
+    width:260px;
+    height:260px;
+    background:#d7bcff;
+    bottom:-90px;
+    right:-90px;
+    opacity:.35;
 }
 
-/* FLOWER DECORATION */
+/* FLOWER */
 
 .flower-left,
 .flower-right{
     position:absolute;
-    opacity:.16;
+    opacity:.12;
     pointer-events:none;
     z-index:0;
 }
 
 .flower-left{
-    left:-40px;
-    top:230px;
-    width:220px;
+    width:180px;
+    left:-35px;
+    top:210px;
 }
 
 .flower-right{
-    right:-40px;
-    bottom:40px;
-    width:240px;
+    width:190px;
+    right:-35px;
+    bottom:35px;
 }
 
 /* WRAPPER */
 
 .wrapper{
     width:100%;
-    max-width:420px;
-    padding:28px 22px;
-    text-align:center;
+    max-width:380px;
+    padding:22px 18px;
     position:relative;
     z-index:2;
+    text-align:center;
 }
 
 /* PROFILE */
 
 .profile-frame{
-    width:180px;
-    height:180px;
+    width:145px;
+    height:145px;
 
     margin:auto;
-    padding:6px;
+    padding:5px;
 
     border-radius:50%;
 
     background:
     linear-gradient(
     135deg,
-    #fff5d8,
-    #ffbfd7,
-    #d8b9ff
+    #fff4d7,
+    #ffbfd6,
+    #d9bfff
     );
 
     box-shadow:
-    0 0 25px rgba(255,255,255,.85),
-    0 0 50px rgba(255,183,213,.5);
+    0 0 22px rgba(255,255,255,.85),
+    0 0 40px rgba(255,183,213,.45);
 
     animation:pulse 3s infinite;
 }
@@ -167,7 +167,7 @@ body::before{
     object-fit:cover;
     object-position:center top;
 
-    border:4px solid rgba(255,255,255,.8);
+    border:3px solid rgba(255,255,255,.8);
 }
 
 @keyframes pulse{
@@ -176,21 +176,21 @@ body::before{
     }
 
     50%{
-        transform:scale(1.02);
+        transform:scale(1.015);
     }
 }
 
 /* NAME */
 
 h1{
-    margin-top:22px;
+    margin-top:16px;
 
     font-family:'Cormorant Garamond',serif;
-    font-size:52px;
-    line-height:1.08;
+    font-size:38px;
+    line-height:1.1;
     font-weight:700;
 
-    color:#5f1a56;
+    color:#5d1a54;
 }
 
 /* DIVIDER */
@@ -199,28 +199,28 @@ h1{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:12px;
+    gap:10px;
 
-    margin:18px 0 30px;
+    margin:14px 0 24px;
 }
 
 .divider span{
-    width:80px;
-    height:4px;
+    width:62px;
+    height:3px;
 
     border-radius:20px;
 
     background:
     linear-gradient(
     90deg,
-    #f5b49d,
-    #c9a8ff
+    #f5b59f,
+    #cba8ff
     );
 }
 
 .divider i{
-    font-size:24px;
-    color:#e88abc;
+    font-size:18px;
+    color:#e68bbd;
 }
 
 /* CARD */
@@ -233,31 +233,29 @@ h1{
     align-items:center;
     justify-content:space-between;
 
-    padding:18px 20px;
-    margin-bottom:18px;
+    padding:14px 16px;
+    margin-bottom:14px;
 
-    border-radius:28px;
+    border-radius:24px;
 
     text-decoration:none;
     color:#65195b;
 
     background:rgba(255,255,255,.28);
 
-    border:1px solid rgba(255,255,255,.5);
+    border:1px solid rgba(255,255,255,.45);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(16px);
 
     box-shadow:
-    0 10px 28px rgba(194,143,255,.18);
+    0 8px 24px rgba(194,143,255,.15);
 
-    transition:.35s ease;
+    transition:.3s ease;
 }
 
 .card:hover{
-    transform:translateY(-4px) scale(1.01);
+    transform:translateY(-3px);
 }
-
-/* SHINE */
 
 .card::before{
     content:"";
@@ -289,16 +287,16 @@ h1{
 .left{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:12px;
 }
 
 /* ICON */
 
 .icon{
-    width:62px;
-    height:62px;
+    width:52px;
+    height:52px;
 
-    border-radius:20px;
+    border-radius:18px;
 
     display:flex;
     align-items:center;
@@ -307,12 +305,12 @@ h1{
     flex-shrink:0;
 
     box-shadow:
-    0 8px 18px rgba(0,0,0,.10);
+    0 6px 14px rgba(0,0,0,.10);
 }
 
 .icon img{
-    width:32px;
-    height:32px;
+    width:26px;
+    height:26px;
 }
 
 /* ICON COLORS */
@@ -321,7 +319,7 @@ h1{
     background:
     linear-gradient(
     135deg,
-    #9cf0b4,
+    #9df0b5,
     #25d366
     );
 }
@@ -330,8 +328,8 @@ h1{
     background:
     linear-gradient(
     135deg,
-    #ff9fc7,
-    #de5f9c
+    #ff9fc8,
+    #de5f9d
     );
 }
 
@@ -343,38 +341,38 @@ h1{
 
 .text b{
     display:block;
-    font-size:22px;
+    font-size:18px;
     font-weight:700;
 }
 
 .text span{
-    font-size:14px;
-    opacity:.8;
+    font-size:12px;
+    opacity:.78;
 }
 
 /* ARROW */
 
 .arrow{
-    font-size:42px;
+    font-size:32px;
     color:#6f1d66;
-    opacity:.6;
+    opacity:.55;
 }
 
 /* FOOTER */
 
 footer{
-    margin-top:28px;
+    margin-top:18px;
     color:#4f1148;
 }
 
 .heart{
-    font-size:48px;
+    font-size:34px;
     color:white;
 
     text-shadow:
-    0 0 18px rgba(255,255,255,.8);
+    0 0 15px rgba(255,255,255,.8);
 
-    margin-bottom:10px;
+    margin-bottom:6px;
 }
 
 footer p{
@@ -382,13 +380,13 @@ footer p{
 }
 
 footer p:first-of-type{
-    font-size:28px;
+    font-size:22px;
     font-weight:600;
 }
 
 footer p:last-of-type{
-    margin-top:4px;
-    font-size:18px;
+    margin-top:2px;
+    font-size:15px;
 }
 
 /* RIPPLE */
@@ -412,55 +410,52 @@ footer p:last-of-type{
 
 @media(max-width:480px){
 
-    body{
-        overflow:auto;
-    }
-
     .wrapper{
-        padding:30px 20px 40px;
-    }
-
-    h1{
-        font-size:42px;
+        max-width:340px;
+        padding:18px 16px;
     }
 
     .profile-frame{
-        width:165px;
-        height:165px;
+        width:132px;
+        height:132px;
+    }
+
+    h1{
+        font-size:34px;
     }
 
     .card{
-        padding:16px;
+        padding:13px 14px;
     }
 
     .icon{
-        width:58px;
-        height:58px;
+        width:48px;
+        height:48px;
     }
 
     .icon img{
-        width:28px;
-        height:28px;
+        width:24px;
+        height:24px;
     }
 
     .text b{
-        font-size:20px;
+        font-size:17px;
     }
 
     .text span{
-        font-size:13px;
+        font-size:11px;
     }
 
     .arrow{
-        font-size:36px;
+        font-size:28px;
     }
 
     footer p:first-of-type{
-        font-size:24px;
+        font-size:20px;
     }
 
     footer p:last-of-type{
-        font-size:16px;
+        font-size:14px;
     }
 
 }
@@ -470,7 +465,7 @@ footer p:last-of-type{
 
 <body>
 
-<!-- FLOWER SVG -->
+<!-- FLOWER -->
 
 <img class="flower-left"
 src="https://svgshare.com/i/16vG.svg">
