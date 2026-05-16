@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Virda Ananda Putri</title>
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    display:flex;
+    justify-content:center;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,236,220,.95),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(206,170,255,.65),
+    transparent 35%),
+
+    linear-gradient(
+    135deg,
+    #ffe8e2,
+    #f8dce6,
+    #efd9ff,
+    #ffdfe6
+    );
+
+    background-size:400% 400%;
+    animation:bgMove 16s ease infinite;
+
+    position:relative;
+}
+
+/* Background movement */
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* Sparkles */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(rgba(255,255,255,.9) 1px, transparent 1px);
+
+    background-size:120px 120px;
+
+    opacity:.4;
+
+    pointer-events:none;
+}
+
+/* Curved glowing lines */
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(255,255,255,.25),
+    transparent 30%);
+
+    pointer-events:none;
+}
+
+/* Floral decoration */
+
+.flower-left{
+    position:fixed;
+    left:-10px;
+    top:330px;
+    width:230px;
+    opacity:.14;
+    pointer-events:none;
+}
+
+.flower-right{
+    position:fixed;
+    right:-10px;
+    bottom:80px;
+    width:240px;
+    opacity:.14;
+    pointer-events:none;
+}
+
+/* Soft glow */
+
+.glow1,
+.glow2{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(80px);
+    z-index:-1;
+}
+
+.glow1{
+    width:260px;
+    height:260px;
+    background:#ffc9d8;
+    top:-60px;
+    left:-100px;
+    opacity:.4;
+}
+
+.glow2{
+    width:280px;
+    height:280px;
+    background:#cfb1ff;
+    bottom:-80px;
+    right:-100px;
+    opacity:.35;
+}
+
+/* Wrapper */
+
+.wrapper{
+    width:100%;
+    max-width:470px;
+    padding:55px 24px 45px;
+    text-align:center;
+    position:relative;
+}
+
+/* Profile */
+
+.profile-frame{
+    width:230px;
+    height:230px;
+
+    margin:auto;
+    padding:7px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff8d8,
+    #ffb9d5,
+    #d9b6ff
+    );
+
+    box-shadow:
+    0 0 30px rgba(255,255,255,.7),
+    0 0 60px rgba(255,183,213,.55);
+
+    animation:pulse 3s infinite;
+}
+
+.profile-frame img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+
+    object-fit:cover;
+    object-position:center top;
+
+    border:5px solid rgba(255,255,255,.65);
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.02);
+    }
+}
+
+/* Name */
+
+h1{
+    margin-top:28px;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:64px;
+    line-height:1.1;
+    font-weight:700;
+
+    color:#5b164f;
+}
+
+/* Divider */
+
+.divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+
+    margin:22px 0 42px;
+}
+
+.divider span{
+    width:105px;
+    height:4px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #f7b39b,
+    #caa7ff
+    );
+}
+
+.divider i{
+    font-size:26px;
+    color:#eb89bf;
+}
+
+/* Cards */
+
+.card{
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:24px 24px;
+    margin-bottom:26px;
+
+    border-radius:34px;
+
+    text-decoration:none;
+    color:#65195b;
+
+    background:rgba(255,255,255,.28);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 12px 35px rgba(194,143,255,.18);
+
+    transition:.35s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px) scale(1.02);
+}
+
+/* Shine */
+
+.card::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.55),
+    transparent
+    );
+
+    transition:.7s;
+}
+
+.card:hover::before{
+    left:120%;
+}
+
+/* Left */
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/* Icon */
+
+.icon{
+    width:92px;
+    height:92px;
+
+    border-radius:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    box-shadow:
+    0 12px 22px rgba(0,0,0,.12);
+}
+
+.icon img{
+    width:46px;
+    height:46px;
+}
+
+/* Brand colors */
+
+.whatsapp .icon{
+    background:
+    linear-gradient(
+    135deg,
+    #91f2ac,
+    #25d366
+    );
+}
+
+.email .icon{
+    background:
+    linear-gradient(
+    135deg,
+    #ff9dc6,
+    #dd5d99
+    );
+}
+
+/* Hover glow */
+
+.whatsapp:hover{
+    box-shadow:
+    0 0 35px rgba(37,211,102,.28);
+}
+
+.email:hover{
+    box-shadow:
+    0 0 35px rgba(255,105,180,.22);
+}
+
+/* Text */
+
+.text{
+    text-align:left;
+}
+
+.text b{
+    display:block;
+    font-size:30px;
+    font-weight:700;
+}
+
+.text span{
+    font-size:18px;
+    opacity:.82;
+}
+
+/* Arrow */
+
+.arrow{
+    font-size:70px;
+    line-height:1;
+    color:#6f1d66;
+    opacity:.75;
+}
+
+/* Footer */
+
+footer{
+    margin-top:55px;
+    color:#4f1148;
+}
+
+.heart{
+    font-size:72px;
+    color:white;
+
+    text-shadow:
+    0 0 18px rgba(255,255,255,.8);
+
+    margin-bottom:20px;
+}
+
+footer p{
+    font-family:'Cormorant Garamond',serif;
+}
+
+footer p:first-of-type{
+    font-size:34px;
+    font-weight:600;
+}
+
+footer p:last-of-type{
+    margin-top:8px;
+    font-size:24px;
+}
+
+/* Ripple */
+
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    animation:ripple .6s linear;
+    background:rgba(255,255,255,.55);
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+    h1{
+        font-size:48px;
+    }
+
+    .profile-frame{
+        width:190px;
+        height:190px;
+    }
+
+    .icon{
+        width:74px;
+        height:74px;
+    }
+
+    .icon img{
+        width:38px;
+        height:38px;
+    }
+
+    .text b{
+        font-size:24px;
+    }
+
+    .text span{
+        font-size:15px;
+    }
+
+    .arrow{
+        font-size:52px;
+    }
+
+    footer p:first-of-type{
+        font-size:28px;
+    }
+
+    footer p:last-of-type{
+        font-size:20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floral SVG -->
+
+<img class="flower-left"
+src="https://svgshare.com/i/16vG.svg">
+
+<img class="flower-right"
+src="https://svgshare.com/i/16uQ.svg">
+
+<!-- Glow -->
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<div class="wrapper">
+
+    <!-- Profile -->
+
+    <div class="profile-frame">
+        <img src="profile.jpg">
+    </div>
+
+    <h1>Virda Ananda Putri</h1>
+
+    <div class="divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+    </div>
+
+    <!-- WhatsApp -->
+
+    <a class="card whatsapp"
+    href="https://wa.me/6281381416817"
+    target="_blank">
+
+        <div class="left">
+
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/whatsapp.png">
+            </div>
+
+            <div class="text">
+                <b>WhatsApp</b>
+                <span>Chat langsung via WhatsApp</span>
+            </div>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- Email -->
+
+    <a class="card email"
+    href="mailto:virdaananda75@gmail.com">
+
+        <div class="left">
+
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/new-post.png">
+            </div>
+
+            <div class="text">
+                <b>Email</b>
+                <span>Virda Ananda Putri</span>
+            </div>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="heart">♡</div>
+
+        <p>Terima kasih telah berkunjung!</p>
+
+        <p>© 2026 Virda Ananda Putri</p>
+
+    </footer>
+
+</div>
+
+<script>
+
+document.querySelectorAll('.card').forEach(btn=>{
+
+btn.addEventListener('click',function(e){
+
+const circle=document.createElement('span');
+
+const d=Math.max(
+this.clientWidth,
+this.clientHeight
+);
+
+const r=d/2;
+
+circle.style.width=
+circle.style.height=d+'px';
+
+circle.style.left=
+(e.offsetX-r)+'px';
+
+circle.style.top=
+(e.offsetY-r)+'px';
+
+circle.classList.add('ripple');
+
+const ripple=this.querySelector('.ripple');
+
+if(ripple) ripple.remove();
+
+this.appendChild(circle);
+
+})
+
+})
+
+</script>
+
+</body>
+</html>
