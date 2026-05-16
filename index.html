@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Virda Ananda Putri</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,20 +18,28 @@
 }
 
 body{
-    font-family:'Segoe UI',sans-serif;
     min-height:100vh;
     display:flex;
     justify-content:center;
     overflow-x:hidden;
-    color:white;
+
+    font-family:'Poppins',sans-serif;
 
     background:
+    radial-gradient(circle at top left,
+    rgba(255,220,230,.9),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(214,180,255,.85),
+    transparent 35%),
+
     linear-gradient(
-        135deg,
-        #0b1020,
-        #161d36,
-        #24173b,
-        #0b1020
+    135deg,
+    #ffe9e7,
+    #f8dfe7,
+    #f2d9ff,
+    #ffdfe7
     );
 
     background-size:400% 400%;
@@ -36,85 +48,7 @@ body{
     position:relative;
 }
 
-/* Floral Background */
-
-body::before,
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-1;
-}
-
-/* Flower Pattern */
-
-body::before{
-
-    background-image:
-
-    radial-gradient(circle at center,
-    rgba(255,255,255,.08) 0 8px,
-    transparent 9px),
-
-    radial-gradient(circle at top,
-    rgba(249,168,212,.08) 0 18px,
-    transparent 19px),
-
-    radial-gradient(circle at bottom,
-    rgba(192,132,252,.08) 0 18px,
-    transparent 19px),
-
-    radial-gradient(circle at left,
-    rgba(255,182,193,.08) 0 18px,
-    transparent 19px),
-
-    radial-gradient(circle at right,
-    rgba(216,180,254,.08) 0 18px,
-    transparent 19px),
-
-    radial-gradient(circle,
-    rgba(255,255,255,.04) 0 5px,
-    transparent 6px);
-
-    background-size:
-    240px 240px,
-    240px 240px,
-    240px 240px,
-    240px 240px,
-    240px 240px,
-    120px 120px;
-
-    background-position:
-    40px 40px,
-    40px 10px,
-    40px 70px,
-    10px 40px,
-    70px 40px,
-    100px 100px;
-
-    opacity:.4;
-}
-
-/* Soft Glow */
-
-body::after{
-
-    background:
-    radial-gradient(circle at 20% 20%,
-    rgba(249,168,212,.12),
-    transparent 25%),
-
-    radial-gradient(circle at 80% 80%,
-    rgba(192,132,252,.10),
-    transparent 25%),
-
-    radial-gradient(circle at 50% 50%,
-    rgba(255,255,255,.04),
-    transparent 35%);
-
-    filter:blur(20px);
-}
+/* Animated background */
 
 @keyframes bgMove{
     0%{background-position:0% 50%}
@@ -122,78 +56,114 @@ body::after{
     100%{background-position:0% 50%}
 }
 
+/* Decorative flowers */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background-image:
+    url("https://www.transparenttextures.com/patterns/stardust.png");
+
+    opacity:.18;
+}
+
+/* FLOWER SVG LEFT */
+
+.flower-left{
+    position:fixed;
+    left:0;
+    top:280px;
+    width:220px;
+    opacity:.18;
+    pointer-events:none;
+}
+
+/* FLOWER SVG RIGHT */
+
+.flower-right{
+    position:fixed;
+    right:0;
+    bottom:80px;
+    width:240px;
+    opacity:.18;
+    pointer-events:none;
+}
+
+/* FLOATING LIGHT */
+
+.light{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(70px);
+    z-index:-1;
+}
+
+.light.one{
+    width:280px;
+    height:280px;
+    background:#ffb7c5;
+    top:-80px;
+    left:-100px;
+    opacity:.35;
+}
+
+.light.two{
+    width:280px;
+    height:280px;
+    background:#c9a0ff;
+    bottom:-80px;
+    right:-100px;
+    opacity:.30;
+}
+
+/* WRAPPER */
+
 .wrapper{
     width:100%;
-    max-width:430px;
-    padding:40px 22px;
+    max-width:470px;
+    padding:55px 24px 40px;
     text-align:center;
     position:relative;
 }
 
-/* Floating glow */
-
-.wrapper::before,
-.wrapper::after{
-    content:"";
-    position:absolute;
-    width:260px;
-    height:260px;
-    border-radius:50%;
-    filter:blur(90px);
-    opacity:.20;
-    z-index:-1;
-}
-
-.wrapper::before{
-    background:#f9a8d4;
-    top:-40px;
-    left:-120px;
-}
-
-.wrapper::after{
-    background:#a78bfa;
-    bottom:-40px;
-    right:-120px;
-}
-
 /* PROFILE */
 
-.profile{
-    animation:fadeDown .8s ease;
-}
-
 .profile-frame{
-    width:175px;
-    height:175px;
+    width:220px;
+    height:220px;
     margin:auto;
-    padding:6px;
+    padding:7px;
     border-radius:50%;
 
-    background:linear-gradient(
-        135deg,
-        #f9a8d4,
-        #c084fc,
-        #818cf8
+    background:
+    linear-gradient(
+    135deg,
+    #fff6d8,
+    #ffb7d8,
+    #d4b2ff
     );
 
     box-shadow:
-    0 0 25px rgba(192,132,252,.35),
-    0 0 55px rgba(249,168,212,.18);
+    0 0 30px rgba(255,255,255,.7),
+    0 0 60px rgba(255,183,216,.5);
 
     animation:pulse 3s infinite;
 }
 
-.profile img{
+.profile-frame img{
     width:100%;
     height:100%;
-    border-radius:50%;
     object-fit:cover;
     object-position:center top;
-    border:4px solid rgba(255,255,255,.10);
+
+    border-radius:50%;
+    border:5px solid rgba(255,255,255,.65);
 }
 
 @keyframes pulse{
-
     0%,100%{
         transform:scale(1);
     }
@@ -203,24 +173,44 @@ body::after{
     }
 }
 
-.profile h1{
-    margin-top:22px;
-    font-size:31px;
+/* NAME */
+
+h1{
+    margin-top:28px;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:64px;
+    line-height:1.1;
+    color:#55134f;
     font-weight:700;
-    line-height:1.3;
 }
 
+/* DIVIDER */
+
 .divider{
-    width:95px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+
+    margin:22px 0 42px;
+}
+
+.divider span{
+    width:105px;
     height:4px;
-    margin:16px auto 38px;
     border-radius:20px;
 
     background:linear-gradient(
-        90deg,
-        #f9a8d4,
-        #a78bfa
+    90deg,
+    #f7b89f,
+    #d5a4ff
     );
+}
+
+.divider i{
+    font-size:28px;
+    color:#e48bc3;
 }
 
 /* CARD */
@@ -233,24 +223,28 @@ body::after{
     align-items:center;
     justify-content:space-between;
 
-    padding:17px 18px;
-    margin-bottom:18px;
+    padding:22px 22px;
+    margin-bottom:24px;
 
-    border-radius:24px;
+    border-radius:32px;
 
     text-decoration:none;
-    color:white;
+    color:#5a1454;
 
-    background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.28);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.45);
 
     backdrop-filter:blur(18px);
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,.30);
+    0 10px 40px rgba(196,139,255,.18);
 
     transition:.35s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px) scale(1.02);
 }
 
 .card::before{
@@ -263,11 +257,12 @@ body::after{
     width:100%;
     height:100%;
 
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.18),
-        transparent
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.5),
+    transparent
     );
 
     transition:.6s;
@@ -277,66 +272,54 @@ body::after{
     left:120%;
 }
 
-.card:hover{
-    transform:translateY(-5px) scale(1.02);
-}
-
-/* Glow */
-
-.whatsapp:hover{
-    box-shadow:
-    0 0 25px rgba(37,211,102,.45);
-}
-
-.email:hover{
-    box-shadow:
-    0 0 25px rgba(249,168,212,.28);
-}
-
-/* CONTENT */
+/* LEFT */
 
 .left{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:18px;
 }
 
-.icon{
-    width:54px;
-    height:54px;
+/* ICON */
 
-    border-radius:17px;
+.icon{
+    width:92px;
+    height:92px;
+
+    border-radius:26px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    flex-shrink:0;
-
     box-shadow:
-    0 6px 18px rgba(0,0,0,.22);
+    0 12px 24px rgba(0,0,0,.12);
+
+    flex-shrink:0;
 }
 
 .icon img{
-    width:25px;
-    height:25px;
+    width:48px;
+    height:48px;
 }
 
 /* ICON COLORS */
 
 .whatsapp .icon{
-    background:linear-gradient(
-        135deg,
-        #16a34a,
-        #22c55e
+    background:
+    linear-gradient(
+    135deg,
+    #85f2a5,
+    #25d366
     );
 }
 
 .email .icon{
-    background:linear-gradient(
-        135deg,
-        #ec4899,
-        #a855f7
+    background:
+    linear-gradient(
+    135deg,
+    #ff9bc3,
+    #d85b97
     );
 }
 
@@ -348,20 +331,54 @@ body::after{
 
 .text b{
     display:block;
-    font-size:16px;
+    font-size:28px;
     font-weight:700;
 }
 
 .text span{
-    font-size:13px;
-    opacity:.78;
+    font-size:18px;
+    opacity:.8;
 }
 
 /* ARROW */
 
 .arrow{
+    font-size:68px;
+    font-weight:300;
+    color:#701867;
+    opacity:.8;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    color:#4e0f49;
+}
+
+.heart{
+    font-size:72px;
+    line-height:1;
+    color:white;
+
+    text-shadow:
+    0 0 18px rgba(255,255,255,.7);
+
+    margin-bottom:20px;
+}
+
+footer p{
+    font-family:'Cormorant Garamond',serif;
+}
+
+footer p:first-of-type{
+    font-size:34px;
+    font-weight:600;
+}
+
+footer p:last-of-type{
+    margin-top:10px;
     font-size:24px;
-    opacity:.45;
 }
 
 /* RIPPLE */
@@ -371,7 +388,7 @@ body::after{
     border-radius:50%;
     transform:scale(0);
     animation:ripple .6s linear;
-    background:rgba(255,255,255,.28);
+    background:rgba(255,255,255,.55);
 }
 
 @keyframes ripple{
@@ -381,56 +398,36 @@ body::after{
     }
 }
 
-/* ENTRY */
+/* MOBILE */
 
-.card{
-    opacity:0;
-    transform:translateY(25px);
-}
+@media(max-width:480px){
 
-.card:nth-child(2){
-    animation:fadeUp .5s ease forwards .25s;
-}
-
-.card:nth-child(3){
-    animation:fadeUp .5s ease forwards .45s;
-}
-
-@keyframes fadeDown{
-    from{
-        opacity:0;
-        transform:translateY(-20px);
+    h1{
+        font-size:48px;
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
+    .text b{
+        font-size:22px;
     }
-}
 
-@keyframes fadeUp{
-    to{
-        opacity:1;
-        transform:translateY(0);
+    .text span{
+        font-size:15px;
     }
-}
 
-/* FOOTER */
+    .icon{
+        width:78px;
+        height:78px;
+    }
 
-footer{
-    margin-top:42px;
-    opacity:.75;
-}
+    .icon img{
+        width:40px;
+        height:40px;
+    }
 
-.heart{
-    font-size:24px;
-    margin-bottom:10px;
-    color:#f9a8d4;
-}
+    .arrow{
+        font-size:54px;
+    }
 
-footer p{
-    font-size:13px;
-    line-height:1.8;
 }
 
 </style>
@@ -438,30 +435,43 @@ footer p{
 
 <body>
 
+<!-- Decorative glow -->
+<div class="light one"></div>
+<div class="light two"></div>
+
+<!-- Floral decorations -->
+<img class="flower-left"
+src="https://svgshare.com/i/16vG.svg">
+
+<img class="flower-right"
+src="https://svgshare.com/i/16uQ.svg">
+
 <div class="wrapper">
 
     <!-- PROFILE -->
-    <div class="profile">
 
-        <div class="profile-frame">
-            <img src="profile.jpg">
-        </div>
+    <div class="profile-frame">
+        <img src="profile.jpg">
+    </div>
 
-        <h1>Virda Ananda Putri</h1>
+    <h1>Virda Ananda Putri</h1>
 
-        <div class="divider"></div>
-
+    <div class="divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
     </div>
 
     <!-- WHATSAPP -->
+
     <a class="card whatsapp"
-       href="https://wa.me/6281381416817"
-       target="_blank">
+    href="https://wa.me/6281381416817"
+    target="_blank">
 
         <div class="left">
 
             <div class="icon">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/whatsapp.png">
             </div>
 
             <div class="text">
@@ -476,13 +486,14 @@ footer p{
     </a>
 
     <!-- EMAIL -->
+
     <a class="card email"
-       href="mailto:virdaananda75@gmail.com">
+    href="mailto:virdaananda75@gmail.com">
 
         <div class="left">
 
             <div class="icon">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/new-post.png">
             </div>
 
             <div class="text">
@@ -497,6 +508,7 @@ footer p{
     </a>
 
     <!-- FOOTER -->
+
     <footer>
 
         <div class="heart">♡</div>
@@ -513,35 +525,35 @@ footer p{
 
 document.querySelectorAll('.card').forEach(btn=>{
 
-    btn.addEventListener('click',function(e){
+btn.addEventListener('click',function(e){
 
-        const circle=document.createElement('span');
+const circle=document.createElement('span');
 
-        const d=Math.max(
-            this.clientWidth,
-            this.clientHeight
-        );
+const d=Math.max(
+this.clientWidth,
+this.clientHeight
+);
 
-        const r=d/2;
+const r=d/2;
 
-        circle.style.width=
-        circle.style.height=d+'px';
+circle.style.width=
+circle.style.height=d+'px';
 
-        circle.style.left=
-        (e.offsetX-r)+'px';
+circle.style.left=
+(e.offsetX-r)+'px';
 
-        circle.style.top=
-        (e.offsetY-r)+'px';
+circle.style.top=
+(e.offsetY-r)+'px';
 
-        circle.classList.add('ripple');
+circle.classList.add('ripple');
 
-        const ripple=this.querySelector('.ripple');
+const ripple=this.querySelector('.ripple');
 
-        if(ripple) ripple.remove();
+if(ripple) ripple.remove();
 
-        this.appendChild(circle);
+this.appendChild(circle);
 
-    })
+})
 
 })
 
